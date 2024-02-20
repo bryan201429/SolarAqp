@@ -1,10 +1,10 @@
 
 .gaugeContainer {
     font-family: Arial;
-    height: 100%;
+    height: 90%;
     overflow: hidden;     /*          Esconde la mitad del circulo*/
     /* position: relative; */
-    width: 95%;
+    width: 94%;
     padding: 0;
     background-color: red;
     display: flex;
@@ -14,9 +14,9 @@
 
 .loader {
     background: transparent;
-    border: 70px solid #cd8a8a;
+    border: 90px solid #cd8a8a;
     border-radius: 50%;
-    height: 23rem;
+    width: 100%;
     transition: transform 1.5s ease;
     transform: rotate(var(--rotation));
     position: relative;
@@ -29,14 +29,15 @@
 
 .loader::before {
     content: '';
-    border: 70px   solid rgba(50,50,50,0.8);
+    border: 90px   solid rgba(50,50,50,0.8);
     border-left-color: transparent;
     border-top-color: transparent;
     border-radius: 50%;
     
-    height: 23rem;
-    left: -70px;
-    top: -70px;
+    height: inherit;
+    width: inherit;
+    left: -90px;
+    top: -90px;
     transform: rotate(45deg);
     position: absolute;
     aspect-ratio: 1/1;
