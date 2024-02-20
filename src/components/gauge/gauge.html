@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Gauge Chart</title>
+    <style>
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --rotation: 0deg;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .container {
+        font-family: Arial;
+        height: 10rem;
+        left: 50%;
+        overflow: hidden;
+        position: relative;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 20rem;
+    }
+
+    .loader {
+        background: transparent;
+        border: 50px solid #cd8a8a;
+        border-radius: 50%;
+        height: 20rem;
+        transition: transform 1.5s ease;
+        transform: rotate(var(--rotation));
+        position: relative;
+        width: 20rem;
+    }
+
+    .loader::before {
+        content: '';
+        border: 50px   solid rgba(50,50,50,0.8);
+        border-left-color: transparent;
+        border-radius: 50%;
+        border-top-color: transparent;
+        height: 20rem;
+        left: -50px;
+        top: -50px;
+        transform: rotate(45deg);
+        position: absolute;
+        width: 20rem;
+        z-index: 2;
+    }
+
+    .loader__title {
+        color: #484848;
+        font-size: 5rem;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="loader__title">0</h1>
+  <div class="loader"></div>	
+</div>
+
+<script>
+
+        const changeNum = () => {
+        // const randomNum = Math.round(Math.random() * 100);
+        // const degrees = Math.round((randomNum / 100) * 180);
+        let numeroUV=14;
+        const degrees = Math.round((numeroUV / 15) * 180);              //numeroUV es el actual, 15 sería el 100%
+        const root = document.querySelector(":root");
+        let title = document.querySelector(".loader__title");
+
+        let currentNumber = parseInt(title.innerText);
+        
+        // const interval = setInterval(() => {
+        //     if (currentNumber < randomNum) {
+        //     currentNumber++;
+        //     title.innerText = currentNumber;
+        //     } else if (currentNumber > randomNum) {
+        //     currentNumber--;
+        //     title.innerText = currentNumber;
+        //     } else {
+        //     clearInterval(interval);
+        //     }
+        // }, 3);
+
+        title.innerText = numeroUV;
+        root.style.setProperty("--rotation", ${degrees}deg);
+        };
+
+        setInterval(() => {
+        changeNum();
+        }, 2000);
+</script>
+
+</body>
+</html>

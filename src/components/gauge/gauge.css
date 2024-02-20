@@ -1,0 +1,53 @@
+
+.gaugeContainer {
+    font-family: Arial;
+    height: 100%;
+    overflow: hidden;     /*          Esconde la mitad del circulo*/
+    /* position: relative; */
+    width: 95%;
+    padding: 0;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    background: transparent;
+    border: 70px solid #cd8a8a;
+    border-radius: 50%;
+    height: 23rem;
+    transition: transform 1.5s ease;
+    transform: rotate(var(--rotation));
+    position: relative;
+    /* width: 23rem; */
+    aspect-ratio: 1/1;
+    z-index: 7;
+    top: 50%;
+    
+}
+
+.loader::before {
+    content: '';
+    border: 70px   solid rgba(50,50,50,0.8);
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    
+    height: 23rem;
+    left: -70px;
+    top: -70px;
+    transform: rotate(45deg);
+    position: absolute;
+    aspect-ratio: 1/1;
+    z-index: 8;
+}
+
+.loader__title {
+    color: #484848;
+    font-size: 5rem;
+
+    position: absolute;
+    background-color: green;
+
+}
