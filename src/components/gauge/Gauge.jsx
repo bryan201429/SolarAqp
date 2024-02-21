@@ -7,7 +7,7 @@ export default function Gauge() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setNumeroUV(5); // Aquí estableces el número UV como 15 cada 2 segundos
+      setNumeroUV(5.33); // Aquí estableces el número UV como 15 cada 2 segundos
     }, 1000);
 
     return () => clearInterval(intervalId);
@@ -21,7 +21,9 @@ export default function Gauge() {
   return (
     <div className="gaugeContainer">
       <h1 className="loader__title">{numeroUV}</h1>
+
       <div className="loader" style={{ transform: `rotate(${degrees}deg)` }}></div>
+
     </div>
   );
 }
