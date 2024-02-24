@@ -5,42 +5,47 @@ const Gauge = () => {
   useEffect(() => {
     // setup 
     const data = {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: ['Mon', 'Tue'],
       datasets: [{
         label: 'Weekly Sales',
-        data: [18, 12, 6, 9, 12, 3, 9],
+        data: [18, 12],
         backgroundColor: [
           'rgba(255, 26, 104, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 0, 0, 0.2)'
+          'rgba(180, 162, 235, 1)',
+
+
         ],
         borderColor: [
           'rgba(255, 26, 104, 1)',
           'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 0, 0, 1)'
+
         ],
-        borderWidth: 1
+        borderWidth: 1,
+        cutout: '50%'          //GROSOR
       }]
     };
 
     // config 
+
+    // const gaugeText={
+    //   id:'gaugeChartText',
+    //   afterDatasetsDraw(chart, args, pluginOptions){
+
+    //   }
+    // }
     const config = {
       type: 'doughnut',
       data,
       options: {
-        scales: {
-          y: {
-            beginAtZero: true
+        plugins:{
+          legend:{
+            display:false
           }
+        },
+        tooltip:{
+          enabled:false
         }
+
       }
     };
 
