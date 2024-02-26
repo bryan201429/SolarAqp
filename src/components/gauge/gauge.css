@@ -63,30 +63,22 @@
 } */
 
 
-.chartMenu {
-    height: 100%;
-    aspect-ratio: 1/1;
-    height: 40px;
-    background: #1A1A1A;
-    color: rgba(54, 162, 235, 1);
-    z-index: 10;
-  }
-  .chartMenu p {
-    padding: 10px;
-    font-size: 20px;
-  }
+
   .chartCard {
-    width: 100vw;
-    height: calc(100vh - 40px);
+    width: 100%;
+    height: 100%;
     background: rgba(54, 162, 235, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5%;
   }
   .chartBox {
-    width: 700px;
-    padding: 20px;
-    border-radius: 20px;
-    border: solid 3px rgba(54, 162, 235, 1);
-    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    /* border-radius: 20px; */
+    /* border: solid 3px rgba(54, 162, 235, 1); */
+    /* background: white; */
+    margin: 0;
   }
