@@ -16,7 +16,14 @@ export default function Home(){
 
             </div>
             <div id='Container2'>
-                <div id='ClusterGraph'> <Gauge></Gauge></div>
+                <div id='ClusterGraph'> 
+                    <div id='gaugeTitle'>Radiación UV en Tiempo Real</div>
+                    <Gauge></Gauge>
+                    <div id='gaugeUpdateTime'>
+                        <h1>Ultima actualización</h1>
+                        <h2>21:50 PM</h2>
+                    </div>
+                </div>
                 <div id='Recommendations'></div>
             </div>
             <div id='Container3'>

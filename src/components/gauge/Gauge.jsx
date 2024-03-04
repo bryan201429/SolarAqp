@@ -10,18 +10,18 @@ const Gauge = () => {
 
     const ctx = document.getElementById('myChart').getContext('2d');
     const gradientSegment= ctx.createLinearGradient(0,0,chartWidth,0);
-    gradientSegment.addColorStop(0.05,'#08A045');
-    gradientSegment.addColorStop(0.3,'#e5de00');
-    gradientSegment.addColorStop(0.5,'#FF6E00');
-    gradientSegment.addColorStop(0.7,'#df2c14');
+    gradientSegment.addColorStop(0.0,'#08A045');
+    gradientSegment.addColorStop(0.15,'#e5de00');
+    // gradientSegment.addColorStop(0.3,'#FF6E00');
+    gradientSegment.addColorStop(0.35,'#df2c14');
 
-    gradientSegment.addColorStop(0.9,'#603fef');
+    gradientSegment.addColorStop(0.55,'#603fef');
 
     const data = {
       labels: ['Mon'],
       datasets: [{
         label: 'UV INDEX',
-        data: [10, 0],                //Valor actual y valor max de gráfico
+        data: [15, 0],                //Valor actual y valor max de gráfico
         backgroundColor: [
           // 'rgba(255, 60, 104, 0.5)',
           gradientSegment,
@@ -83,21 +83,21 @@ const Gauge = () => {
         // ctx.textAling='right';
         // ctx.fillText('850',right,yCoor+20);
 
-        ctx.font='60px sans-serif'
+        ctx.font='50px sans-serif'
         ctx.textAlign='center';
         ctx.textBaseLine='bottom';
         ctx.fillText(score,xCoor,yCoor);
 
-        ctx.font='50px sans-serif'
+        ctx.font='35px sans-serif'
         ctx.textAlign='center';
         ctx.textBaseLine='bottom';
-        ctx.fillText(uvIndex,xCoor,yCoor+65);
+        ctx.fillText(uvIndex,xCoor,yCoor-140);
 
       // If the mouse is hovering over the first dataset, show the uvIndex
       if (chart.tooltip._active && chart.tooltip._active.length && chart.tooltip._active[0].datasetIndex === 0) {
         const uvIndex = calculateUVIndex(data.datasets[0].data[0]);
         ctx.font = '50px sans-serif';
-        ctx.fillText(uvIndex, xCoor, yCoor + 65);
+        ctx.fillText(uvIndex, xCoor, yCoor + 40);
       }
       ctx.restore();
 
@@ -134,6 +134,8 @@ const Gauge = () => {
       myChart.destroy();
     };
   }, []);
+
+
 
   return (
     <>
