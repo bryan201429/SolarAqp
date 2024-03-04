@@ -10,31 +10,32 @@ const Gauge = () => {
 
     const ctx = document.getElementById('myChart').getContext('2d');
     const gradientSegment= ctx.createLinearGradient(0,0,chartWidth,0);
-    gradientSegment.addColorStop(0,'green');
-    gradientSegment.addColorStop(0.2,'yellow');
-    gradientSegment.addColorStop(0.5,'orange');
-    gradientSegment.addColorStop(0.6,'red');
-    gradientSegment.addColorStop(1,'blue');
+    gradientSegment.addColorStop(0.05,'#08A045');
+    gradientSegment.addColorStop(0.3,'#e5de00');
+    gradientSegment.addColorStop(0.5,'#FF6E00');
+    gradientSegment.addColorStop(0.7,'#df2c14');
+
+    gradientSegment.addColorStop(0.9,'#603fef');
 
     const data = {
-      labels: ['Mon', 'Tue'],
+      labels: ['Mon'],
       datasets: [{
-        label: 'Weekly Sales',
-        data: [12, 0],                //Valor actual y valor max de gráfico
+        label: 'UV INDEX',
+        data: [10, 0],                //Valor actual y valor max de gráfico
         backgroundColor: [
           // 'rgba(255, 60, 104, 0.5)',
           gradientSegment,
-          'rgba(30, 30, 30, 0.6)',
+          'rgba(30, 30, 30, 0.4)',
 
 
         ],
         borderColor: [
           'rgba(255, 60, 104, 0)',
-          'rgba(100, 100, 100, 1)',
+          'rgba(100, 100, 100, 0.3)',
 
         ],
         borderWidth: 1,
-        cutout: '80%',          //GROSOR
+        cutout: '75%',          //GROSOR
         circumference: 180,     //medio circulo
         rotation: 270,          //orientación
       }]
@@ -70,7 +71,7 @@ const Gauge = () => {
         const score=data.datasets[0].data[0];
 
         console.log(yCoor);
-        ctx.fillRect(xCoor,yCoor,200,1)
+        // ctx.fillRect(xCoor,yCoor,200,1)
 
         // ctx.font='20px sans-serif';
         ctx.fillStyle='#333';
@@ -92,7 +93,13 @@ const Gauge = () => {
         ctx.textBaseLine='bottom';
         ctx.fillText(uvIndex,xCoor,yCoor+65);
 
-
+      // If the mouse is hovering over the first dataset, show the uvIndex
+      if (chart.tooltip._active && chart.tooltip._active.length && chart.tooltip._active[0].datasetIndex === 0) {
+        const uvIndex = calculateUVIndex(data.datasets[0].data[0]);
+        ctx.font = '50px sans-serif';
+        ctx.fillText(uvIndex, xCoor, yCoor + 65);
+      }
+      ctx.restore();
 
       }
     }
@@ -106,8 +113,11 @@ const Gauge = () => {
             display:false
           }
         },
+        animation: {
+          duration: 1500
+        },
         tooltip:{
-          enabled:false
+          enabled:false,
         }
       },
       plugins:[gaugeChartText]
