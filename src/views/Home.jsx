@@ -20,7 +20,7 @@ export default function Home(){
                     <div id='gaugeTitle'>Radiación UV en Tiempo Real</div>
                     <Gauge></Gauge>
                     <div id='gaugeUpdateTime'>
-                        <h1>Ultima actualización</h1>
+                        <h1>Ultima actualización:</h1>
                         <h2>21:50 PM</h2>
                     </div>
                 </div>
