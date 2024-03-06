@@ -74,7 +74,7 @@ const Gauge = () => {
         // ctx.fillRect(xCoor,yCoor,200,1)
 
         // ctx.font='20px sans-serif';
-        ctx.fillStyle='#333';
+        ctx.fillStyle='#603fef';
         // ctx.textBaseLine='top';
 
         // ctx.textAling='right';
