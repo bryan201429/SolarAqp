@@ -30,7 +30,6 @@
     width: 90vw;
     filter: brightness(200%);
     z-index: 0;
-
 }
 
 #Container1{
@@ -39,7 +38,9 @@
     margin-right: 5vw;
     padding: 0;
     z-index: 1;
-    background-color: black;
+    background-color:  rgba(0,0,0, 0.7);
+    backdrop-filter: blur 5px;
+    border-radius: 5px;
 }
 
 #ClusterGraph {
@@ -53,6 +54,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    border-radius: 5px;
 }
 
 
@@ -66,6 +68,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+
 }
 
 #gaugeTitle{
@@ -80,7 +83,6 @@
 #gaugeUpdateTime{
     width: 100%;
     height: 17%;
-    /* background-color: rgba(50,50,50,0.5); */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,7 +115,104 @@
     width: 60%;
     margin: 0;
     backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+#RecomendationsNumbers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 24%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#indexBox{
+    height: 32%;
+    aspect-ratio: 1/1;
+    background-color: purple;
+    border-radius: 15px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0; margin: 0;
+}
+
+#indexBoxTitle{
+    font-size:3vh;
+    padding: 0; margin: 0;
+}
+
+#indexBoxNumber{
+    font-size: 4vh;
+    padding: 0; margin: 0;
+}
+
+
+
+#RecomendationsText{
+    height: 100%;
+    width: 75%;
+    
+}
+
+#tempBox{
+    height: 32%;
+    aspect-ratio: 1/1;
+    background-color: red;
+    border-radius: 15px;
+    display: flex;flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+
+}
+
+#tempBoxTitle{
+    font-size:3vh;
+    padding: 0; margin: 0;
+}
+
+#tempBoxNumber{
+    font-size: 4vh;
+    padding: 0; margin: 0;
+}
+
+
+
+#medidasControlIcons{
+    background-color: white;
+    width: 90%;
+    height: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+
+#RecomendationsText h1{
+    background-color: red;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Chart {
     background-color:  rgba(255, 255, 255, 0.3); 
@@ -129,4 +228,6 @@
     margin: 0;
     backdrop-filter: blur(30px); 
 }
+
+
 
