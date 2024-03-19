@@ -91,7 +91,7 @@ const Gauge = () => {
         ctx.font='35px sans-serif'
         ctx.textAlign='center';
         ctx.textBaseLine='bottom';
-        ctx.fillText(uvIndex,xCoor,yCoor-140);
+        ctx.fillText(uvIndex,xCoor,yCoor-(yCoor*9/11));
 
       // If the mouse is hovering over the first dataset, show the uvIndex
       if (chart.tooltip._active && chart.tooltip._active.length && chart.tooltip._active[0].datasetIndex === 0) {
