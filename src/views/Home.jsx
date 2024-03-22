@@ -7,7 +7,7 @@ import { useEffect,useState } from 'react'
 
 export default function Home(){
 
-    const [indexUV, setIndexUV] = useState(7);
+    const [indexUV, setIndexUV] = useState(3);
     const [temperature, setTemperature] = useState(30.5);
     const [radiationDescription, setRadiationDescription] = useState('');
     const [radiationList, setRadiationList] = useState('');
@@ -46,10 +46,7 @@ export default function Home(){
     )
     const recomendationBaja = (
         <>
-        <h3>- Uso de Protector solar sugerido SPF30+</h3>
-        <h3>- </h3>
-
-
+        <h3>- Uso de Protector solar sugerido: SPF30+</h3>
         </>
     )
 
