@@ -203,18 +203,26 @@
 
 
 #RecomendationTextTitle{
-    background-color: red;
+    /* background-color: rgba(red, green, blue, alpha); */
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
     height: 15%;
+    font-size: 2.5vw;
 }
 
 .RecomendationTextSubtitle{
     padding: 0;
     margin: 0;
-    background-color: blue;
-    height: 10%;
+    /* background-color: blue; */
+    height: 11%;
+    font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 .RecomendationContainer{
@@ -233,20 +241,34 @@
     padding: 0;
     margin: 0;
     height: 25%;
-    font-size: 1.1vw;
+    font-size: 1.05vw;
+    font-weight: 400;
 }
 
 
 #medidasControlTitle{
-    background-color: red;
+    /* background-color: red; */
     height: 10%;
     padding: 0;
     margin: 0;
+    font-size: 1.5vw;
 }
 
 #medidasControlIconsContainer{
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+#medidasControlIconsContainer img{
+    /* background-color: green; */
+    width: 10%;
+    height: auto;
+    
 }
 
 #Chart {

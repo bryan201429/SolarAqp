@@ -3,26 +3,33 @@ import clouds from '../assets/clouds 3.png'
 import sun from '../assets/sun reduced.png'
 import Sidebar from '../components/Sidebar.jsx'
 import Gauge from '../components/gauge/Gauge'
+import sunglasses from '../assets/icons/sunglasses.png'
+import hat from '../assets/icons/hat.png'
+import protector from '../assets/icons/protector.png'
+import sweater from '../assets/icons/sweater.png'
+import umbrella from '../assets/icons/umbrella.png'
+import water from '../assets/icons/water.png'
 import { useEffect,useState } from 'react'
 
 export default function Home(){
 
-    const [indexUV, setIndexUV] = useState(3);
+    const [indexUV, setIndexUV] = useState(2);
     const [temperature, setTemperature] = useState(30.5);
     const [radiationDescription, setRadiationDescription] = useState('');
     const [radiationList, setRadiationList] = useState('');
+    const [icons,setIcons] =useState('');
 
     const recomendationExtrema = (
         <>
-        <h3>- Protector solar amplio espectro: SPF 50+ cada 2 horas</h3>
-        <h3>- Evitar Exposición Solar al Máximo, permanecer en sombra</h3>
+        <h3>- Protector solar amplio espectro: SPF 50+ cada 2 Hrs.</h3>
+        <h3>- Evitar Exposición Solar al Máximo</h3>
         <h3>- Hidratación Contínua</h3>
         <h3>- Uso de Sombrero, ropa manga larga y lentes UV</h3>
         </>
     )
     const recomendationMuyAlta = (
         <>
-        <h3>- Protector solar amplio espectro: SPF 30+ cada 2 horas</h3>
+        <h3>- Protector solar amplio espectro: SPF 30+ cada 2 Hrs.</h3>
         <h3>- Reducir exposición solar de ser posible</h3>
         <h3>- Hidratación Contínua</h3>
         <h3>- Uso de Sombrero, ropa manga larga y lentes UV</h3>
@@ -50,24 +57,56 @@ export default function Home(){
         </>
     )
 
+    const controlIconsExtrema = (
+        <>
+        <img src={protector}></img>
+        <img src={hat}></img>
+        <img src={sweater}></img>
+        <img src={water}></img>
+        <img src={sunglasses}></img>
+        <img src={umbrella}></img>
+        </>
+    )
+    const controlIconsModerada = (
+        <>
+        <img src={protector}></img>
+        <img src={hat}></img>
+        <img src={water}></img>
+        <img src={sunglasses}></img>
+        </>
+    )
+    const controlIconsbaja = (
+        <>
+
+        <img src={hat}></img>
+        <img src={water}></img>
+
+        </>
+    )
+
 
     useEffect(()=>{
 
     if (indexUV<=3){         // 0 a 2.9
         setRadiationDescription('Radiación Baja');
         setRadiationList(recomendationBaja);
+        setIcons(controlIconsbaja);
       }else if (indexUV>3 && indexUV<6){          //3 a 5.9
         setRadiationDescription('Radiación Moderada');
         setRadiationList(recomendationModerada);
+        setIcons(controlIconsModerada);
           }else if (indexUV>=6 && indexUV<8){      // 6 a 7.9
             setRadiationDescription('Radiación Alta');
             setRadiationList(recomendationAlta);
+            setIcons(controlIconsExtrema);
             }else if (indexUV>=8 && indexUV<11){     // 8 a 10.9
                setRadiationDescription('Radiación Muy Alta');
                 setRadiationList(recomendationMuyAlta);
+                setIcons(controlIconsExtrema);
               }else if (indexUV>=11){                      // 11 a más
                 setRadiationDescription('Radiación Extrema');
                 setRadiationList(recomendationExtrema);
+                setIcons(controlIconsExtrema);
                 }
     },[indexUV]) ;
 
@@ -109,7 +148,9 @@ export default function Home(){
                             {radiationList}
                         </div>
                         <h2 id='medidasControlTitle'>Medidas de Control:</h2>
-                        <div id='medidasControlIconsContainer'> Iconos</div>
+                        <div id='medidasControlIconsContainer'> 
+                            {icons}
+                        </div>
                     </div>
 
 
