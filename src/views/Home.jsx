@@ -13,12 +13,13 @@ import { useEffect,useState } from 'react'
 
 export default function Home(){
 
-    const [indexUV, setIndexUV] = useState(2);
+    const [indexUV, setIndexUV] = useState(3);
     const [temperature, setTemperature] = useState(30.5);
     const [radiationDescription, setRadiationDescription] = useState('');
     const [radiationList, setRadiationList] = useState('');
     const [icons,setIcons] =useState('');
-
+    const [indexBox,setIndexBox] = useState('')   
+    
     const recomendationExtrema = (
         <>
         <h3>- Protector solar amplio espectro: SPF 50+ cada 2 Hrs.</h3>
@@ -89,22 +90,27 @@ export default function Home(){
 
     if (indexUV<=3){         // 0 a 2.9
         setRadiationDescription('Radiación Baja');
+        setIndexBox('low');
         setRadiationList(recomendationBaja);
         setIcons(controlIconsbaja);
       }else if (indexUV>3 && indexUV<6){          //3 a 5.9
+        setIndexBox('medium');
         setRadiationDescription('Radiación Moderada');
         setRadiationList(recomendationModerada);
         setIcons(controlIconsModerada);
           }else if (indexUV>=6 && indexUV<8){      // 6 a 7.9
+            setIndexBox('high');
             setRadiationDescription('Radiación Alta');
             setRadiationList(recomendationAlta);
             setIcons(controlIconsExtrema);
             }else if (indexUV>=8 && indexUV<11){     // 8 a 10.9
-               setRadiationDescription('Radiación Muy Alta');
+                setRadiationDescription('Radiación Muy Alta');
+                setIndexBox('very-high');
                 setRadiationList(recomendationMuyAlta);
                 setIcons(controlIconsExtrema);
               }else if (indexUV>=11){                      // 11 a más
                 setRadiationDescription('Radiación Extrema');
+                setIndexBox('extreme');
                 setRadiationList(recomendationExtrema);
                 setIcons(controlIconsExtrema);
                 }
@@ -131,7 +137,7 @@ export default function Home(){
 
                 <div id='Recommendations'>
                     <div id='RecomendationsNumbers'> 
-                        <div id='indexBox'>
+                        <div id='indexBox' className={indexBox}>
                             <h2 id='indexBoxTitle'>IUV</h2>
                             <h1 id='indexBoxNumber'>{indexUV}</h1>
                         </div>

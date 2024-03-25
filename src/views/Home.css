@@ -136,7 +136,7 @@
 #indexBox{
     height: 32%;
     aspect-ratio: 1/1;
-    background-color: purple;
+    /* background-color: purple; */
     border-radius: 15px;
     display: flex; 
     flex-direction: column;
@@ -286,5 +286,23 @@
     backdrop-filter: blur(30px); 
 }
 
+.low{
+  background-color: green; /* Verde para valores bajos */
+}
 
+.medium {
+  background-color: yellow; /* Amarillo para valores intermedios */
+}
+
+.high {
+  background-color: orange; /* Naranja para valores altos */
+}
+
+.very-high {
+  background-color: red; /* Rojo para valores muy altos */
+}
+
+.extreme {
+  background-color: purple; /* Morado para valores extremos */
+}
 

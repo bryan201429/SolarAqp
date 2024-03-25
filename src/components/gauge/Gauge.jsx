@@ -21,7 +21,7 @@ const Gauge = () => {
       labels: ['Mon'],
       datasets: [{
         label: 'UV INDEX',
-        data: [15, 0],                //Valor actual y valor max de gráfico
+        data: [7, 0],                //Valor actual y valor max de gráfico
         backgroundColor: [
           // 'rgba(255, 60, 104, 0.5)',
           gradientSegment,
