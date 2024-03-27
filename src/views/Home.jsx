@@ -19,7 +19,8 @@ export default function Home(){
     const [radiationList, setRadiationList] = useState('');
     const [icons,setIcons] =useState('');
     const [indexBox,setIndexBox] = useState('')   
-    
+
+
     const recomendationExtrema = (
         <>
         <h3>- Protector solar amplio espectro: SPF 50+ cada 2 Hrs.</h3>
@@ -114,6 +115,12 @@ export default function Home(){
                 setRadiationList(recomendationExtrema);
                 setIcons(controlIconsExtrema);
                 }
+
+
+            
+
+    
+
     },[indexUV]) ;
 
     return(
@@ -163,7 +170,10 @@ export default function Home(){
                 </div>
             </div>
             <div id='Container3'>
-                <div id='Chart'></div>
+                <div id='ChartContainer'>
+                    {/* <canvas id="myChart"></canvas> */}
+
+                </div>
                 <div id='ChartInfo'></div>
             </div>
 
