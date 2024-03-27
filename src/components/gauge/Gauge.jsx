@@ -10,7 +10,7 @@ const Gauge = () => {
 
     const ctx = document.getElementById('myChart').getContext('2d');
     const gradientSegment= ctx.createLinearGradient(0,0,chartWidth,0);
-    gradientSegment.addColorStop(0.0,'#08A045');
+    gradientSegment.addColorStop(0.05,'#08A045');
     gradientSegment.addColorStop(0.15,'#e5de00');
     // gradientSegment.addColorStop(0.3,'#FF6E00');
     gradientSegment.addColorStop(0.35,'#df2c14');
@@ -35,7 +35,7 @@ const Gauge = () => {
 
         ],
         borderWidth: 1,
-        cutout: '75%',          //GROSOR
+        cutout: '80%',          //GROSOR
         circumference: 180,     //medio circulo
         rotation: 270,          //orientación
       }]

@@ -10,10 +10,11 @@ import sweater from '../assets/icons/sweater.png'
 import umbrella from '../assets/icons/umbrella.png'
 import water from '../assets/icons/water.png'
 import { useEffect,useState } from 'react'
+import LineChart from '../components/chart/LineChart.jsx'
 
 export default function Home(){
 
-    const [indexUV, setIndexUV] = useState(3);
+    const [indexUV, setIndexUV] = useState(5.5);
     const [temperature, setTemperature] = useState(30.5);
     const [radiationDescription, setRadiationDescription] = useState('');
     const [radiationList, setRadiationList] = useState('');
@@ -85,6 +86,9 @@ export default function Home(){
 
         </>
     )
+
+
+
 
 
     useEffect(()=>{
@@ -171,8 +175,7 @@ export default function Home(){
             </div>
             <div id='Container3'>
                 <div id='ChartContainer'>
-                    {/* <canvas id="myChart"></canvas> */}
-
+                    <LineChart></LineChart>
                 </div>
                 <div id='ChartInfo'></div>
             </div>

@@ -44,17 +44,17 @@
 }
 
 #ClusterGraph {
-    background-color:  rgba(255, 255, 255, 0.3);
+    background-color:  rgba(255, 255, 255, 0.35);
     height: 100%;
     width: 38%;
     margin: 0;
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(20px); 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 
@@ -114,11 +114,12 @@
     height: 100%;
     width: 60%;
     margin: 0;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 8px 8px 8px 8px;
 }
 
 #RecomendationsNumbers{
@@ -143,6 +144,7 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 0; margin: 0;
+    text-shadow: 1px 1px #000000;
 }
 
 #indexBoxTitle{
@@ -272,18 +274,24 @@
 }
 
 #ChartContainer {
-    background-color:  rgba(255, 255, 255, 0.3); 
+    /* background-color:  rgba(255, 255, 255, 0.3);  */
+    background-color: rgba(0, 0, 0, 0.7); 
     height: 100%;
     width: 68%;
     margin: 0;
     backdrop-filter: blur(30px); 
+    border-radius: 8px 0 0 8px;
+    padding: 2%;
+    box-sizing: border-box;
 }
 #ChartInfo {
-    background-color: rgba(0, 0, 0, 0.7); 
+    /* background-color: rgba(0, 0, 0, 0.7);  */
+    background-color:  rgba(255, 255, 255, 0.35); 
     height: 100%;
     width: 32%;
     margin: 0;
-    backdrop-filter: blur(30px); 
+    backdrop-filter: blur(20px); 
+    border-radius: 0 8px 8px 0;
 }
 
 .low{
@@ -291,7 +299,7 @@
 }
 
 .medium {
-  background-color: yellow; /* Amarillo para valores intermedios */
+  background-color: #ffd000; /* Amarillo para valores intermedios */
 }
 
 .high {
