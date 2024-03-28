@@ -16,20 +16,20 @@ export default function LineChart() {
             chartInstance.current = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: UserData.map(data => data.year),
+                    labels: UserData.map(data => data.time),
                     datasets: [{
-                        label: 'User Gain',
-                        data: UserData.map(data => data.userGain),
-                        borderColor: 'rgb(75, 192, 192)',
+                        label: 'Indice UV   ',
+                        data: UserData.map(data => data.uv),
+                        borderColor: 'rgb(0, 255, 100)',
                         fill: true,
-                        backgroundColor:'rgba(75, 192, 192,0.1)',
+                        backgroundColor:'rgba(0, 200, 180,0.35)',
                     },
                     {
-                        label: 'User Lost',
-                        data: UserData.map(data => data.userLost),
-                        borderColor: 'rgb(255, 99, 132)',
+                        label: 'Temperatura °C',
+                        data: UserData.map(data => data.temperature),
+                        borderColor: 'rgb(255,80,80)',
                         fill: true,
-                        backgroundColor:'rgba(255, 99, 132,0.6)',
+                        backgroundColor:'rgba(255, 99, 132,0.3)',
                     }]
                 },
                 options: {
@@ -54,16 +54,24 @@ export default function LineChart() {
                     },
                     animation:{
                         duration:3000
+                    },
+                    responsive:true,
+                    maintainAspectRatio:false,
+                    plugins:{
+                        legend:{
+                            labels:{
+                                color:'white'
+                            }
+                        }
                     }
-
                 }
             });
         }
     }, []);
 
     return (
-        <div>
-            <canvas ref={chartContainer}></canvas>
+        <div id='canvasContainer' style={{position: "relative", height:"100%", width:"100%"}}>
+            <canvas ref={chartContainer} id='canvas'></canvas>
         </div>
     );
 }
@@ -71,32 +79,44 @@ export default function LineChart() {
 const UserData = [
     {
         id: 1,
-        year: 2016,
-        userGain: 80000,
-        userLost: 50000,
+        time: "10:00",
+        uv: 14,
+        temperature: 10,
     },
     {
         id: 2,
-        year: 2017,
-        userGain: 45677,
-        userLost: 34500,
+        time: "10:00",
+        uv: 13,
+        temperature: 10,
     },
     {
         id: 3,
-        year: 2018,
-        userGain: 78888,
-        userLost: 55500,
+        time: "10:00",
+        uv: 15,
+        temperature: 18,
     },
     {
         id: 4,
-        year: 2019,
-        userGain: 90000,
-        userLost: 45550,
+        time: "10:00",
+        uv: 18,
+        temperature: 22,
     },
     {
         id: 5,
-        year: 2020,
-        userGain: 4300,
-        userLost: 2340,
+        time: "10:00",
+        uv: 14,
+        temperature: 25,
+    },
+    {
+        id: 6,
+        time: "10:00",
+        uv: 12,
+        temperature: 16,
+    },
+    {
+        id: 7,
+        time: "10:00",
+        uv: 10,
+        temperature: 10,
     },
 ];

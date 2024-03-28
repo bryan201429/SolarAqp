@@ -11,6 +11,7 @@ import umbrella from '../assets/icons/umbrella.png'
 import water from '../assets/icons/water.png'
 import { useEffect,useState } from 'react'
 import LineChart from '../components/chart/LineChart.jsx'
+import ChartInfoBox from '../components/chartInfo/ChartInfoBox.jsx'
 
 export default function Home(){
 
@@ -80,13 +81,10 @@ export default function Home(){
     )
     const controlIconsbaja = (
         <>
-
         <img src={hat}></img>
         <img src={water}></img>
-
         </>
     )
-
 
 
 
@@ -174,10 +172,21 @@ export default function Home(){
                 </div>
             </div>
             <div id='Container3'>
+                    
                 <div id='ChartContainer'>
+                    <h2 id='ChartTitle'>Historial gráfico</h2>
                     <LineChart></LineChart>
                 </div>
-                <div id='ChartInfo'></div>
+                <div id='ChartInfo'>
+                    {/* <div id='ButtonContainer'> 
+                        <button id='button1' className='infoButton1' onClick={buttonChange1}></button>
+                        <button id='button2' className='infoButton2 infoButtonInactive2' onClick={buttonChange2}></button>
+                    </div>
+                    <div id='ChartInfoBody'>
+                        {chartInfoBodyData}
+                    </div> */}
+                    <ChartInfoBox></ChartInfoBox>
+                </div>
             </div>
 
         </div>
