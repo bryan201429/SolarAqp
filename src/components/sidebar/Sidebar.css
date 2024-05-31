@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+#sidebarContainer{
+    height: 100vh;
+    width: 15vw;
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo negro semitransparente */
+    backdrop-filter: blur(50px) brightness(50%);
+    border-right: solid 1px rgb(71, 71, 71);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logoContainer{
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    margin-top: 1.5vh;
+}
+.logoContainer img{
+    width: 100%;
+    height: auto;
+}
+.clockContainer{
+    width: 90%;
+    margin-top: 4vh;
+    text-align: center;
+    /* background-color: green; */
+    font-family: 'Orbitron';
+
+}

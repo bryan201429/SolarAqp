@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Jura';
   src: url('./fonts/Jura/Jura-VariableFont_wght.ttf') format('woff2');

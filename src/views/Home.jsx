@@ -1,7 +1,7 @@
 import './Home.css'
 import clouds from '../assets/clouds 3.png'
 import sun from '../assets/sun reduced.png'
-import Sidebar from '../components/Sidebar.jsx'
+import Sidebar from '../components/sidebar/Sidebar.jsx'
 import Gauge from '../components/gauge/Gauge'
 import sunglasses from '../assets/icons/sunglasses.png'
 import hat from '../assets/icons/hat.png'
