@@ -5,7 +5,9 @@ import 'tailwindcss/tailwind.css';
 import './Sidebar.css'
 import mainLogo from '../../assets/main logos/mainlogo1nobg.png' 
 export default function Sidebar(){
-    const [time, setTime] = useState('nada');
+    const [time, setTime] = useState('');
+    const [today, setToday] = useState('');
+    const [fullDate,setfullDate] = useState('');
 
 useEffect(()=>{
 
@@ -18,11 +20,17 @@ useEffect(()=>{
         let min = date.getMinutes(); min = formatHour(min);
         let sec = date.getSeconds(); sec=formatHour(sec);
 
-        const year = date.getFullYear();
-        const day = new Date();
-        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const dayName = weekday[day.getDay()];
-        setTime(`${hours} : ${min} :${sec} , ${dayName} , ${year}`);
+        
+        let day = new Date();
+        let weekday = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        let dayName = weekday[day.getDay()];
+        let dayNumber = day.getDay(); dayNumber<10?dayNumber='0'+dayNumber: dayNumber.toString();
+        let monthNumber = day.getMonth(); monthNumber<10?monthNumber='0'+monthNumber: monthNumber.toString();
+        let year = date.getFullYear();
+        
+        setTime(`${hours} : ${min} :${sec} Hrs.`);
+        setToday(`${dayName}`)
+        setfullDate(`${dayNumber}/ ${monthNumber}/ ${year}`)
     }
     const timerId = setInterval(currentTime, 1000);
         
@@ -36,7 +44,9 @@ useEffect(()=>{
                 <img src={mainLogo}></img>
             </div>
             <div className='clockContainer'> 
-            <h1 className="text-4xl font-light"> {time} </h1>
+            <h1 className="text-2xl font-light"> {time} </h1>
+            <h2 className="text-2xl font-light"> {today} </h2>
+            <h2 className="text-2xl font-light"> {fullDate} </h2>
             </div>
         </div>
        
