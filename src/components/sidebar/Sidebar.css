@@ -27,10 +27,35 @@
     height: auto;
 }
 .clockContainer{
-    width: 90%;
+    width: 95%;
     padding: 0;
     margin-top: 4vh;
     text-align: center;
     font-family: 'Orbitron';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: red; */
+    gap: 1vh;
+    margin-bottom: 2vh;
+}
+.divider{
+    background-color: #9c9c9c9c;
+    border: solid 0px;
+    height: 2px;
+    width: 90%;
+}
 
+.temperatureContainer{
+    margin-top: 2vh;
+    font-family: 'Orbitron';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+#TemperatureBar{
+    background-color: red;
+    height: 5vh;
+    width: 90%;
 }

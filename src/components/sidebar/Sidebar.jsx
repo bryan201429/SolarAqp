@@ -4,10 +4,13 @@ import 'tailwindcss/tailwind.css';
 
 import './Sidebar.css'
 import mainLogo from '../../assets/main logos/mainlogo1nobg.png' 
+import GradientBar from '../gradientBar/GradientBar.jsx';
 export default function Sidebar(){
     const [time, setTime] = useState('');
     const [today, setToday] = useState('');
     const [fullDate,setfullDate] = useState('');
+    const temperaturaC=30;
+    const temperaturaF= temperaturaC*9/5+32
 
 useEffect(()=>{
 
@@ -44,9 +47,17 @@ useEffect(()=>{
                 <img src={mainLogo}></img>
             </div>
             <div className='clockContainer'> 
-            <h1 className="text-2xl font-light"> {time} </h1>
-            <h2 className="text-2xl font-light"> {today} </h2>
-            <h2 className="text-2xl font-light"> {fullDate} </h2>
+                <h1 className="text-2xl font-light"> {time} </h1>
+                <h2 className="text-2xl font-light"> {today} </h2>
+                <h2 className="text-2xl font-light"> {fullDate} </h2>
+            </div>
+            <hr className='divider'></hr>
+            <div className='temperatureContainer'>
+            <h1 className="text-2xl font-light"> Temperatura: </h1>
+            <h1 className="text-2xl font-light"> {temperaturaC}°C / {temperaturaF}° F </h1>
+            <div id='TemperatureBar'>
+                <GradientBar data={{temperatura:temperaturaC,min:10,max:5}}></GradientBar>
+            </div>
             </div>
         </div>
        
