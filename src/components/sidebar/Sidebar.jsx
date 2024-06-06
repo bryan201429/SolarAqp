@@ -9,7 +9,7 @@ export default function Sidebar(){
     const [time, setTime] = useState('');
     const [today, setToday] = useState('');
     const [fullDate,setfullDate] = useState('');
-    const temperaturaC=30;
+    const temperaturaC=35;
     const temperaturaF= temperaturaC*9/5+32
 
 useEffect(()=>{

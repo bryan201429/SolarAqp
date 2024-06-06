@@ -23,16 +23,12 @@ const Gauge = () => {
         label: 'UV INDEX',
         data: [12, 0],                //Valor actual y valor max de gráfico
         backgroundColor: [
-          // 'rgba(255, 60, 104, 0.5)',
           gradientSegment,
           'rgba(30, 30, 30, 0.4)',
-
-
         ],
         borderColor: [
           'rgba(255, 60, 104, 0)',
           'rgba(100, 100, 100, 0.3)',
-
         ],
         borderWidth: 1,
         cutout: '80%',          //GROSOR
