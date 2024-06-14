@@ -22,7 +22,6 @@ useEffect(()=>{
         let hours = date.getHours(); hours=formatHour(hours);
         let min = date.getMinutes(); min = formatHour(min);
         let sec = date.getSeconds(); sec=formatHour(sec);
-
         
         let day = new Date();
         let weekday = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];

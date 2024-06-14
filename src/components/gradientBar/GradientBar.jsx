@@ -32,7 +32,7 @@ export default function GradientBar({data}){
                             data: [[minTemp, maxTemp]],
                             backgroundColor: 'rgba(128, 128, 128, 0.3)', // Gris semitransparente
                             barThickness: 15,
-                            order: 1, // Para asegurarse de que esté en el fondo
+                            order: 1, // Ubicado al fondo
                         },
                         {
                             label:'Temperature',
@@ -42,7 +42,6 @@ export default function GradientBar({data}){
                                 const { ctx, chartArea } = chart;
                 
                                 if (!chartArea) {
-                                  // This case happens on initial chart render
                                   return null;
                                 }
                                 const gradient = ctx.createLinearGradient(chartArea.left, 0, chartArea.right, 0);
@@ -53,7 +52,7 @@ export default function GradientBar({data}){
                                 return gradient;
                               },
                             barThickness: 15,
-                            order: 2, // Para asegurarse de que esté en el frente
+                            order: 2, // Overlap
                         }
                     ]
                 }}
