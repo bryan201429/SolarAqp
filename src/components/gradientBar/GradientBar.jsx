@@ -28,6 +28,13 @@ export default function GradientBar({data}){
                     labels:["°C"],
                     datasets: [
                         {
+                            label: 'Background',
+                            data: [[minTemp, maxTemp]],
+                            backgroundColor: 'rgba(128, 128, 128, 0.3)', // Gris semitransparente
+                            barThickness: 15,
+                            order: 1, // Para asegurarse de que esté en el fondo
+                        },
+                        {
                             label:'Temperature',
                             data: [[minTemp, data.temperatura]], 
                             backgroundColor: (context) => {
@@ -42,10 +49,11 @@ export default function GradientBar({data}){
                                 gradient.addColorStop(0, 'rgba(0,0,255,1)');
                                 gradient.addColorStop(0.4, 'rgba(0,255,0,1)');
                                 gradient.addColorStop(0.6, 'rgba(255,255,0,1)');
-                                gradient.addColorStop(0.9, 'orange');
+                                gradient.addColorStop(0.9, 'rgba(255,10,0,1)');
                                 return gradient;
                               },
                             barThickness: 15,
+                            order: 2, // Para asegurarse de que esté en el frente
                         }
                     ]
                 }}
@@ -61,7 +69,8 @@ export default function GradientBar({data}){
                             }
                         },
                         y:{
-                            display:false
+                            display:false,
+                            stacked: true
                         }
                     },
                     responsive: true,
