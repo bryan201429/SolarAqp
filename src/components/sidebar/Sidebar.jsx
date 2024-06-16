@@ -55,7 +55,7 @@ useEffect(()=>{
             <h1 className="text-2xl font-light"> Temperatura: </h1>
             <h1 className="text-2xl font-light"> {temperaturaC}°C / {temperaturaF}° F </h1>
             <div id='TemperatureBar'>
-                <GradientBar data={{temperatura:temperaturaC,min:10,max:5}}></GradientBar>
+                <GradientBar data={{temperatura:temperaturaC,min:-1030,max:40}}></GradientBar>
             </div>
             </div>
         </div>

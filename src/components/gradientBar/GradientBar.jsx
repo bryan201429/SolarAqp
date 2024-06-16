@@ -8,16 +8,16 @@ import { useState } from 'react';
 
 export default function GradientBar({data}){
     console.log(data)
+    const [minTemp,setMinTemp]= useState(data.min);
+    const [maxTemp,setMaxTemp]= useState(data.max);
+    
     useEffect(()=>{
         const ctx = document.getElementById('myChart').getContext('2d');
-
-
-
-    },[data])
+            
+        setMinTemp(data.min);
+        setMaxTemp(data.max);
+    }, [data.min, data.max]);
     
-    const [minTemp,setMinTemp]= useState(-10);
-    const [maxTemp,setMaxTemp]= useState(40);
-    // console.log (minTemp)
 
     return(
         <div id='gradientBar'>
