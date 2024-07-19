@@ -5,8 +5,11 @@ import { useState } from 'react';
 
 export default function ChartInfoBox(){
     let ChartInfoBodyData1 = (
-        <div>
-            Info1
+        <div className='info1'>
+            <h1>Radiación mas alta:</h1>
+            <h1>Hora de pico de radiación:</h1>
+            <h1>Temperatura mas alta: </h1>
+            <h1>Temperaturas mas baja:</h1>
         </div>
     )
     let ChartInfoBodyData2 = (
@@ -32,8 +35,8 @@ export default function ChartInfoBox(){
         
         <>
         <div id='ButtonContainer'> 
-                        <button id='button1' className='infoButton1' onClick={buttonChange1}></button>
-                        <button id='button2' className='infoButton2 infoButtonInactive2' onClick={buttonChange2}></button>
+                        <button id='button1' className='infoButton1' onClick={buttonChange1}> Estadísticas de Hoy</button>
+                        <button id='button2' className='infoButton2 infoButtonInactive2' onClick={buttonChange2}>Consultar por fecha</button>
                     </div>
                     <div id='ChartInfoBody'>
                         {chartInfoBodyData}
