@@ -37,7 +37,7 @@
     justify-content: space-between;
     /* background-color: red; */
     gap: 1vh;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
 }
 .divider{
     background-color: #9c9c9c9c;
@@ -53,9 +53,32 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 3vh;
 }
 #TemperatureBar{
+    height: 5vh;
+    width: 90%;
+}
+
+.humidityContainer{
+    margin-top: 2vh;
+    font-family: 'Orbitron';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+#HumidityBar{
     /* background-color: red; */
     height: 5vh;
     width: 90%;
+}
+.sideBarGraphText{
+    display: flex;
+    width:70%;
+    justify-content: center;
+}
+.sideBarGraphText img{
+    margin-right: 2px;
 }

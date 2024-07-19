@@ -5,12 +5,15 @@ import 'tailwindcss/tailwind.css';
 import './Sidebar.css'
 import mainLogo from '../../assets/main logos/mainlogo1nobg.png' 
 import GradientBar from '../gradientBar/GradientBar.jsx';
+import waterDrop from '../../assets/icons/waterDrop.svg';
+import termometer from '../../assets/icons/termometer.svg';
 export default function Sidebar(){
     const [time, setTime] = useState('');
     const [today, setToday] = useState('');
     const [fullDate,setfullDate] = useState('');
-    const temperaturaC=25;
+    const temperaturaC=30;
     const temperaturaF= temperaturaC*9/5+32
+    const humedad=5;
 
 useEffect(()=>{
 
@@ -52,12 +55,23 @@ useEffect(()=>{
             </div>
             <hr className='divider'></hr>
             <div className='temperatureContainer'>
-            <h1 className="text-2xl font-light"> Temperatura: </h1>
-            <h1 className="text-2xl font-light"> {temperaturaC}°C / {temperaturaF}° F </h1>
-            <div id='TemperatureBar'>
-                <GradientBar data={{temperatura:temperaturaC,min:-1030,max:40}}></GradientBar>
+                <h1 className="text-2xl font-light sideBarGraphText" > <img src={termometer}/>Temperatura: </h1>
+                <h1 className="text-2xl font-light"> {temperaturaC}°C / {temperaturaF}° F </h1>
+                <div id='TemperatureBar'>
+                <GradientBar data={{temperatura:temperaturaC,min:-10,max:40}}></GradientBar>
+                </div>
             </div>
+            <hr className='divider'></hr>
+            <div className='humidityContainer'>
+
+                <h1 className="text-2xl font-light sideBarGraphText" > <img src={waterDrop}></img> Humedad: </h1>
+                <h1 className="text-2xl font-light"> {humedad} % </h1>
+
+                <div id='HumidityBar'>
+                <GradientBar data={{temperatura:humedad,min:0,max:100}}></GradientBar>
+                </div>
             </div>
+            <hr className='divider'></hr>
         </div>
        
     )
