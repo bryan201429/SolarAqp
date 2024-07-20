@@ -57,3 +57,12 @@ button:hover{
     width: 100%;
     /* background-color: green; */
 }
+.containerInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+.divider{
+background-color: rgba(94, 94, 94, 0.8);
+}
